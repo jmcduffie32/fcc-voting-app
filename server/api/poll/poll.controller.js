@@ -14,9 +14,11 @@ var Poll = require('./poll.model');
 
 // Get list of polls
 exports.index = function(req, res) {
-  Poll.find({},function (err, polls) {
-    if(err) { return handleError(res, err); }
-    return res.status(200).json(polls);
+  Poll.find({})
+    .populate('_creator')
+    .exec(function (err, polls) {
+      if(err) { return handleError(res, err); }
+      return res.status(200).json(polls);
   });
 };
 

@@ -2,12 +2,12 @@
 
 var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
-var responseSchema = new Schema({response: String, votes: Number});
-var pollSchema = new Schema({
+var ResponseSchema = new Schema({response: String, votes: Number});
+var PollSchema = new Schema({
   question: String,
   createdAt: Date,
-  responses: [responseSchema],
-  _creator: [{ type: Schema.Types.ObjectId, ref: 'User'}]
+  responses: [ResponseSchema],
+  _creator: { type: Schema.Types.ObjectId, ref: 'User'}
 });
 
-module.exports = mongoose.model('Poll', pollSchema);
+module.exports = mongoose.model('Poll', PollSchema);

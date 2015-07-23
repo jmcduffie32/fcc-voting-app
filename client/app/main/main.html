@@ -16,7 +16,7 @@
         <li><a href="/polls/{{poll._id}}" tooltip="{{poll.description}}">{{poll.question}}</a></li>
         <li>{{poll.description}}</li>
         <li>Created: {{poll.createdAt}}</li>
-        <li>Created By: {{poll._creator}}</li>
+        <li>Created By: {{poll._creator.name}}</li>
         <ul>
           <li ng-repeat="response in poll.responses">
             {{response.response}},{{response.votes}}
