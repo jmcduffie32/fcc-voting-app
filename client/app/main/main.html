@@ -13,15 +13,16 @@
     <div class="col-lg-12">
       <h1 class="page-header">Polls:</h1>
       <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="poll in polls">
-        <li><a href="/polls/{{poll._id}}" tooltip="{{poll.description}}">{{poll.question}}</a></li>
+        <li>{{poll.question}} </li>
         <li>{{poll.description}}</li>
         <li>Created: {{poll.createdAt}}</li>
         <li>Created By: {{poll._creator.name}}</li>
-        <ul>
+        <ul class="list-unstyled">
           <li ng-repeat="response in poll.responses">
-            {{response.response}},{{response.votes}}
+            {{response.text}} votes: {{response.votes}}
           </li>
         </ul>
+        <li><a ng-show="isLoggedIn()" ng-href="/polls/{{poll._id}}" class="btn btn-primary">Take Poll</a></li>
       </ul>
     </div>
   </div>

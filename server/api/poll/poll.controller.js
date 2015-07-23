@@ -45,8 +45,9 @@ exports.update = function(req, res) {
   Poll.findById(req.params.id, function (err, poll) {
     if (err) { return handleError(res, err); }
     if(!poll) { return res.status(404).send('Not Found'); }
-    var updated = _.merge(poll, req.body);
-    updated.save(function (err) {
+    var updated = _.extend(poll, req.body);
+    //_.extend(poll, updated);
+    poll.save(function (err) {
       if (err) { return handleError(res, err); }
       return res.status(200).json(poll);
     });

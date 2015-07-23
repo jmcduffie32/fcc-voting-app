@@ -1,7 +1,9 @@
 'use strict';
 
 angular.module('votingAppApp')
-  .controller('MainCtrl', function ($scope, $http) {
+  .controller('MainCtrl', function ($scope, $http, Auth) {
+    $scope.isLoggedIn = Auth.isLoggedIn;
+    $scope.getCurrentUser = Auth.getCurrentUser;
     $scope.polls = [];
 
     $http.get('/api/polls').success(function(polls) {

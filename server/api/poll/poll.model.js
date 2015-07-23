@@ -2,7 +2,7 @@
 
 var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
-var ResponseSchema = new Schema({response: String, votes: Number});
+var ResponseSchema = new Schema({text: String, votes: Number});
 var PollSchema = new Schema({
   question: String,
   createdAt: Date,
