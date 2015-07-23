@@ -18,6 +18,7 @@ exports.index = function(req, res) {
     .populate('_creator')
     .exec(function (err, polls) {
       if(err) { return handleError(res, err); }
+      console.log(polls);
       return res.status(200).json(polls);
   });
 };
@@ -46,7 +47,6 @@ exports.update = function(req, res) {
     if (err) { return handleError(res, err); }
     if(!poll) { return res.status(404).send('Not Found'); }
     var updated = _.extend(poll, req.body);
-    //_.extend(poll, updated);
     poll.save(function (err) {
       if (err) { return handleError(res, err); }
       return res.status(200).json(poll);
