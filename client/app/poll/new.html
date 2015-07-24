@@ -15,14 +15,14 @@
       <form>
         <div class="input-group">
           <span class="input-group-addon">Question</span>
-          <input type="text" placeholder="What would you like to ask?" class="form-control">
+          <input type="text" ng-model="poll.question" placeholder="What would you like to ask?" class="form-control">
         </div>
         <p>Responses</p>
         <div class="input-group" ng-repeat="response in poll.responses track by $index">
           <input type="text" ng-model="response.text" placeholder="Add response option here" class="form-control">
         </div>
-
-        <button ng-click="submitResponse()" class="btn btn-primary">Submit</button>
+        <button ng-click="addResponse()" class="btn btn-default">Add Response</button>
+        <button ng-click="createPoll()" class="btn btn-primary">Submit</button>
       </form>
 
     </div>

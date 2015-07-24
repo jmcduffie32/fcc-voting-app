@@ -18,7 +18,6 @@ exports.index = function(req, res) {
     .populate('_creator')
     .exec(function (err, polls) {
       if(err) { return handleError(res, err); }
-      console.log(polls);
       return res.status(200).json(polls);
   });
 };

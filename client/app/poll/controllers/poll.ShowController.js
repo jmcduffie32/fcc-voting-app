@@ -3,7 +3,7 @@
 angular.module('votingAppApp')
   .controller('PollShowCtrl', function (Poll, $scope, $resource, $routeParams, $location) {
     $scope.poll = Poll.get({id: $routeParams.id});
-    console.log($scope.poll);
+
     $scope.selection;
 
     $scope.submitResponse = function() {

@@ -3,12 +3,24 @@
 angular.module('votingAppApp')
   .controller('PollCreateCtrl', function (Poll, $scope, $location) {
     $scope.poll = new Poll();
-    console.log('made it here');
+    var poll = $scope.poll;
+    poll.responses = [];
+    poll.question = '';
+    console.log(poll);
+
+    $scope.addResponse = function () {
+      poll.responses.push({text:'',votes:0});
+      console.log(poll);
+    }
+
+
     $scope.createPoll = function() {
-      if($scope.poll === {}) {
+      if(poll === {}) {
         return;
       }
-      $http.post('/api/polls', $scope.poll);
-      $scope.poll = {};
+      poll.$save().then(function(){
+        $location.path('/');
+      });
+      poll = {};
     };
   });
