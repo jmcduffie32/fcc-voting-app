@@ -5,8 +5,12 @@ angular.module('votingAppApp')
     $scope.menu = [{
       'title': 'Home',
       'link': '/'
-    }];
-
+    },
+    {
+      'title': 'My Polls',
+      'link': '/polls/'+Auth.getCurrentUser()._id+'/polls'
+    }
+  ];
     $scope.isCollapsed = true;
     $scope.isLoggedIn = Auth.isLoggedIn;
     $scope.isAdmin = Auth.isAdmin;

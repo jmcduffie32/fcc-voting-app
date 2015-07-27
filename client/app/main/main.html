@@ -2,17 +2,16 @@
 
 <header class="hero-unit" id="banner">
   <div class="container">
-    <h1>'Voting App!</h1>
+    <h1>We Vote</h1>
     <p class="lead">Create polls that others can use.</p>
-    <img src="assets/images/yeoman.png" alt="I'm Yeoman">
   </div>
 </header>
 
 <div class="container">
   <div class="row">
     <div class="col-lg-3">
-      <ul>
-        <li><a ng-href="/polls/new" class="btn btn-primary">Create A Poll</a></li>
+      <ul class="list-unstyled">
+        <li><a ng-href="/polls/new" ng-show="isLoggedIn()" class="btn btn-primary">Create A Poll</a></li>
       </ul>
     </div>
     <div class="col-lg-9">
@@ -36,7 +35,6 @@
 <footer class="footer">
   <div class="container">
       <p>WeVote|
-        <a href="https://twitter.com/jrmcduff">@JRMcDuff</a> |
-         <a href="https://github.com/DaftMonk/generator-angular-fullstack/issues?state=open">Issues</a></p>
+        <a href="https://twitter.com/jrmcduff">@JRMcDuff</a>
   </div>
 </footer>
