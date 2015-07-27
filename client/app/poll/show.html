@@ -4,7 +4,6 @@
   <div class="container">
     <h1>'Voting App!</h1>
     <p class="lead">Create polls that others can use.</p>
-    <img src="assets/images/yeoman.png" alt="I'm Yeoman">
   </div>
 </header>
 
@@ -20,7 +19,12 @@
         <div>You choose {{poll.responses[selection].text}}</div>
         <button ng-click="submitResponse()" class="btn btn-primary">Submit</button>
       </form>
-
+      <div>
+        <h3>
+          Share this poll with friends
+        </h3>
+        <a ng-href="/polls/{{poll._id}}">fcc-voting-app.herokuapp.com/polls/{{poll._id}}</a>
+      </div>
     </div>
   </div>
 </div>
