@@ -8,7 +8,7 @@ angular.module('votingAppApp')
     },
     {
       'title': 'My Polls',
-      'link': '/polls/'+Auth.getCurrentUser()._id+'/polls'
+      'link': '/polls/'+Auth.getCurrentUser()._id+'/myPolls'
     }
   ];
     $scope.isCollapsed = true;

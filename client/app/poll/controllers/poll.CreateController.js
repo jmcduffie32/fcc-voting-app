@@ -8,12 +8,10 @@ angular.module('votingAppApp')
     poll.question = '';
     poll.createdAt = Date.now();
     poll._creator = Auth.getCurrentUser()._id;
-    console.log(poll);
-
+    
     $scope.addResponse = function () {
       poll.responses.push({text:'',votes:0});
-      console.log(poll);
-    }
+    };
 
 
     $scope.createPoll = function() {

@@ -7,9 +7,9 @@
   </div>
 </header>
 
-<div class="container">
+<div class="container" >
   <div class="row">
-    <div class="col-lg-12">
+    <div class="col-lg-8">
       <h1 class="page-header">{{poll.question}} <button ng-show="isOwner()" ng-click="deletePoll(poll)" class="btn btn-default">Delete</button> </h1>
       <form>
         <label for="option(( $index ))" ng-repeat="response in poll.responses">
@@ -25,6 +25,9 @@
         </h3>
         <a ng-href="/polls/{{poll._id}}">fcc-voting-app.herokuapp.com/polls/{{poll._id}}</a>
       </div>
+    </div>
+    <div class="col-lg-4" ng-if="isLoaded">
+      <poll-chart></poll-chart>
     </div>
   </div>
 </div>

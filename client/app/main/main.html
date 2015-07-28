@@ -18,14 +18,8 @@
       <h1 class="page-header">Polls:</h1>
       <div class="row nav nav-tabs nav-stacked poll" ng-repeat="poll in polls">
         <li>{{poll.question}} </li>
-        <li>{{poll.description}}</li>
-        <li>Created: {{poll.createdAt}}</li>
         <li>Created By: {{poll._creator.name}}</li>
-        <ul class="list-unstyled">
-          <li ng-repeat="response in poll.responses">
-            {{response.text}} votes: {{response.votes}}
-          </li>
-        </ul>
+        <poll-chart></poll-chart>
         <li><a ng-show="isLoggedIn()" ng-href="/polls/{{poll._id}}" class="btn btn-primary">Take Poll</a></li>
       </div>
     </div>

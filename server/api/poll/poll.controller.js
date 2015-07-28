@@ -14,7 +14,8 @@ var Poll = require('./poll.model');
 
 // Get list of polls
 exports.index = function(req, res) {
-  Poll.find({})
+  var params = req.query || {};
+  Poll.find(params)
     .populate('_creator')
     .exec(function (err, polls) {
       if(err) { return handleError(res, err); }
